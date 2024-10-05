@@ -38,7 +38,7 @@ const CommentsList = () => {
       <h2 className={style.comments__title}>Список комментариев</h2>
       <ul className={style.comments__list}>
         {comments.map((comment) => (
-          <Comment comment={comment} deleteComment={deleteComment}/>
+          <Comment comment={comment} deleteComment={deleteComment} key={comment.id}/>
         ))}
       </ul>
       <div className={style.addCommentSection}>
