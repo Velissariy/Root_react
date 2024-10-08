@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import Comment from '../Comment';
 import style from './style.module.css';
+
 const CommentsList = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+
   useEffect(() => {
     const beginData = [];
     beginData.push({
@@ -20,9 +22,11 @@ const CommentsList = () => {
     });
     setComments(beginData);
   }, []);
+
   const deleteComment = (id) => {
     setComments(comments.filter(comment => comment.id !== id));
   };
+
   const addComment = () => {
     if (newComment.trim()) {
       const newCommentObj = {
@@ -33,6 +37,7 @@ const CommentsList = () => {
       setNewComment('');
     }
   };
+
   return (
     <div className={style.comments__container}>
       <h2 className={style.comments__title}>Список комментариев</h2>
@@ -41,6 +46,7 @@ const CommentsList = () => {
           <Comment comment={comment} deleteComment={deleteComment} key={comment.id}/>
         ))}
       </ul>
+
       <div className={style.addCommentSection}>
         <input
           className={style.addCommentSection__input}
@@ -54,4 +60,5 @@ const CommentsList = () => {
     </div>
   );
 };
+
 export default CommentsList;

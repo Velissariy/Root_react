@@ -1,5 +1,6 @@
 import React from 'react';
 import style from'./style.module.css';
+
 const Comments = (props) => {
   return (
     <li className={style.comment__item}>
@@ -8,4 +9,5 @@ const Comments = (props) => {
     </li>
   );
 };
+
 export default Comments;
